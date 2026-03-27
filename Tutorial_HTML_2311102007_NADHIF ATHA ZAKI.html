@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutorial_HTML_2311102007_NadhifAthaZaki</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .navbar-custom {
+      background: #0f4c75;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #ffd166 !important;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0f4c75 0%, #3282b8 100%);
+      color: white;
+      padding-top: 120px;
+      padding-bottom: 80px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .hero h1 span {
+      color: #ffd166;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      margin-top: 18px;
+      margin-bottom: 20px;
+      line-height: 1.8;
+    }
+
+    .profile-img {
+      width: 320px;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 8px solid rgba(255,255,255,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: block;
+      margin: auto;
+    }
+
+    .info-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 10px 18px;
+      border-radius: 999px;
+      margin: 6px 6px 0 0;
+      font-size: 0.92rem;
+    }
+
+    .btn-custom {
+      background: #ffd166;
+      color: #1f2937;
+      font-weight: 600;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-custom:hover {
+      background: #ffbf3f;
+      color: #111827;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #0f4c75;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 45px;
+      color: #6b7280;
+      line-height: 1.8;
+    }
+
+    .card-custom {
+      background: white;
+      border: none;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 76, 117, 0.08);
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-6px);
+    }
+
+    .about-box,
+    .contact-box,
+    .api-box {
+      padding: 30px;
+      border-radius: 18px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 76, 117, 0.08);
+    }
+
+    .timeline {
+      position: relative;
+      margin-left: 10px;
+      padding-left: 28px;
+      border-left: 3px solid #3282b8;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -38px;
+      top: 4px;
+      width: 16px;
+      height: 16px;
+      background: #ffd166;
+      border: 3px solid #0f4c75;
+      border-radius: 50%;
+    }
+
+    .timeline-item h5 {
+      font-weight: 600;
+      color: #0f4c75;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item span {
+      font-size: 0.92rem;
+      color: #6b7280;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      background: #eaf4fb;
+      color: #0f4c75;
+      border: 1px solid #c8e3f5;
+      padding: 10px 16px;
+      border-radius: 999px;
+      margin: 8px 8px 0 0;
+      font-weight: 500;
+    }
+
+    .project-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-title {
+      color: #0f4c75;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .project-text {
+      color: #4b5563;
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    .contact-link {
+      text-decoration: none;
+      color: #0f4c75;
+      font-weight: 500;
+    }
+
+    .contact-link:hover {
+      color: #3282b8;
+    }
+
+    footer {
+      background: #0f4c75;
+      color: white;
+      text-align: center;
+      padding: 24px 15px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .loading-text {
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .quote-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #374151;
+      min-height: 90px;
+    }
+
+    .quote-author {
+      color: #0f4c75;
+      font-weight: 600;
+    }
+
+    .github-data p {
+      margin-bottom: 10px;
+      color: #374151;
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .profile-img {
+        width: 240px;
+        height: 240px;
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom">
+    <div class="container">
+      <a class="navbar-brand" href="#home">Nadhif Portfolio</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Profile</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#api">API</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header / Profile -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7">
+          <h1>Halo, saya <span>Nadhif Atha Zaki</span></h1>
+          <p>
+            Saya adalah mahasiswa S1 Teknik Informatika Telkom University Purwokerto
+            yang memiliki minat pada pengembangan website, pemrograman, dan pembuatan
+            aplikasi.
+          </p>
+
+          <div class="mb-4">
+            <span class="info-badge">Nama: Nadhif Atha Zaki</span>
+            <span class="info-badge">NIM: 2311102007</span>
+            <span class="info-badge">Program Studi: S1 Teknik Informatika</span>
+          </div>
+
+          <a href="#portfolio" class="btn-custom me-2">Lihat Portfolio</a>
+          <a href="#contact" class="btn btn-outline-light">Hubungi Saya</a>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <img src="profile.jpg" alt="Foto Profil Nadhif Atha Zaki" class="profile-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <p class="section-subtitle reveal">
+        Penjelasan singkat tentang diri saya sebagai mahasiswa yang sedang belajar dan
+        berkembang di bidang teknologi informasi.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="about-box reveal">
+            <p class="mb-0" style="line-height: 1.9; color: #4b5563;">
+              Saya merupakan pribadi yang senang mempelajari hal baru, terutama dalam bidang
+              teknologi, pengembangan web, dan pemrograman. Saya memiliki ketertarikan untuk
+              membuat aplikasi yang tidak hanya berjalan dengan baik, tetapi juga mampu memberi
+              manfaat bagi pengguna. Dalam proses belajar, saya terbiasa mengeksplorasi berbagai
+              tools, bahasa pemrograman, serta konsep dasar frontend dan backend development.
+              Saya juga tertarik mengembangkan kemampuan kerja tim, komunikasi, serta problem solving
+              agar dapat mempersiapkan diri untuk dunia kerja dan industri teknologi di masa depan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" style="background: #eef6fb;">
+    <div class="container">
+      <h2 class="section-title reveal">Education</h2>
+      <p class="section-subtitle reveal">
+        Riwayat pendidikan yang telah saya tempuh sampai saat ini.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-custom reveal">
+            <div class="p-4 p-md-5">
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h5>SMK Telkom Purwokerto</h5>
+                  <span>2021 - 2023</span>
+                  <p class="mb-0">
+                    Menempuh pendidikan menengah kejuruan dengan lingkungan belajar
+                    yang berfokus pada teknologi informasi dan pengembangan kemampuan digital.
+                  </p>
+                </div>
+
+                <div class="timeline-item mb-0">
+                  <h5>S1 Teknik Informatika - Telkom University Purwokerto</h5>
+                  <span>2023 - Sekarang</span>
+                  <p class="mb-0">
+                    Sedang menempuh pendidikan sarjana dan mempelajari pemrograman,
+                    pengembangan website, struktur data, basis data, serta rekayasa perangkat lunak.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Skills</h2>
+      <p class="section-subtitle reveal">
+        Beberapa kemampuan yang saya miliki dan terus saya kembangkan.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="about-box reveal text-center">
+            <span class="skill-badge">HTML</span>
+            <span class="skill-badge">CSS</span>
+            <span class="skill-badge">Bootstrap</span>
+            <span class="skill-badge">JavaScript</span>
+            <span class="skill-badge">AJAX</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">Go</span>
+            <span class="skill-badge">Laravel</span>
+            <span class="skill-badge">UI Layout</span>
+            <span class="skill-badge">Responsive Design</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" style="background: #eef6fb;">
+    <div class="container">
+      <h2 class="section-title reveal">Portfolio / Project</h2>
+      <p class="section-subtitle reveal">
+        Beberapa project yang pernah saya kerjakan sebagai proses belajar dan pengembangan kemampuan.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card-custom reveal">
+            <img src="klikkantin.jpg" alt="Project KlikKantin" class="project-img">
+            <div class="project-body">
+              <h3 class="project-title">KlikKantin</h3>
+              <p class="project-text">
+                KlikKantin merupakan aplikasi katalog dan informasi kantin yang dibuat untuk
+                membantu mahasiswa mencari pilihan makanan di area kampus. Project ini berfokus
+                pada penyajian informasi kantin secara sederhana, rapi, dan mudah diakses.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-custom reveal">
+            <img src="siapabaja.jpg" alt="Project SIAPABAJA" class="project-img">
+            <div class="project-body">
+              <h3 class="project-title">SIAPABAJA</h3>
+              <p class="project-text">
+                SIAPABAJA adalah sistem informasi arsip pengadaan barang dan jasa yang dirancang
+                untuk membantu pengelolaan dokumen menjadi lebih terstruktur, mudah dicari,
+                dan mendukung proses administrasi yang lebih efisien.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- API Section -->
+  <section id="api">
+    <div class="container">
+      <h2 class="section-title reveal">Integrasi Web Service / Public API</h2>
+      <p class="section-subtitle reveal">
+        Bagian ini menampilkan data yang diambil secara dinamis menggunakan JavaScript dan AJAX native.
+      </p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="api-box reveal">
+            <h4 class="mb-3" style="color:#0f4c75; font-weight:700;">Motivational Quote API</h4>
+            <p class="loading-text" id="quoteLoading">Sedang mengambil quote dari API...</p>
+            <p class="quote-text" id="quoteText">-</p>
+            <p class="quote-author mb-0" id="quoteAuthor"></p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="api-box reveal">
+            <h4 class="mb-3" style="color:#0f4c75; font-weight:700;">GitHub Profile API</h4>
+            <p class="loading-text" id="githubLoading">Sedang mengambil data GitHub...</p>
+            <div class="github-data" id="githubData">
+              <p><strong>Username:</strong> -</p>
+              <p><strong>Repository Publik:</strong> -</p>
+              <p><strong>Followers:</strong> -</p>
+              <p><strong>Profile GitHub:</strong> -</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background: #eef6fb;">
+    <div class="container">
+      <h2 class="section-title reveal">Contact</h2>
+      <p class="section-subtitle reveal">
+        Informasi kontak yang dapat digunakan untuk menghubungi saya.
+      </p>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="contact-box reveal text-center">
+            <p class="fs-5 mb-3">
+              <strong>Email:</strong>
+              <a class="contact-link" href="mailto:nadhifzaki2005@gmail.com">
+                nadhifzaki2005@gmail.com
+              </a>
+            </p>
+            <p class="fs-5 mb-3">
+              <strong>Instagram:</strong>
+              <a class="contact-link" href="https://instagram.com/nadhifathaz" target="_blank">
+                @nadhifathaz
+              </a>
+            </p>
+            <p class="fs-5 mb-0">
+              <strong>GitHub:</strong>
+              <a class="contact-link" href="https://github.com/nath4el" target="_blank">
+                github.com/nath4el
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Nadhif Atha Zaki | NIM 2311102007 | Website Profile Pribadi
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Reveal animation saat scroll
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    // Active navbar link saat scroll
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 140;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // AJAX Quote API - native XMLHttpRequest
+    function loadQuote() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://dummyjson.com/quotes/random", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          document.getElementById("quoteLoading").style.display = "none";
+
+          if (xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            document.getElementById("quoteText").textContent = '"' + data.quote + '"';
+            document.getElementById("quoteAuthor").textContent = "- " + data.author;
+          } else {
+            document.getElementById("quoteText").textContent =
+              "Gagal mengambil quote dari API.";
+            document.getElementById("quoteAuthor").textContent = "";
+          }
+        }
+      };
+
+      xhr.send();
+    }
+
+    // AJAX GitHub API - native XMLHttpRequest
+    function loadGithubProfile() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.github.com/users/nath4el", true);
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          document.getElementById("githubLoading").style.display = "none";
+
+          if (xhr.status === 200) {
+            const data = JSON.parse(xhr.responseText);
+            document.getElementById("githubData").innerHTML = `
+              <p><strong>Username:</strong> ${data.login}</p>
+              <p><strong>Nama:</strong> ${data.name ? data.name : "-"}</p>
+              <p><strong>Repository Publik:</strong> ${data.public_repos}</p>
+              <p><strong>Followers:</strong> ${data.followers}</p>
+              <p><strong>Following:</strong> ${data.following}</p>
+              <p><strong>Profile GitHub:</strong> <a href="${data.html_url}" target="_blank">${data.html_url}</a></p>
+            `;
+          } else {
+            document.getElementById("githubData").innerHTML = `
+              <p>Gagal mengambil data GitHub dari API.</p>
+            `;
+          }
+        }
+      };
+
+      xhr.send();
+    }
+
+    // Jalankan saat halaman selesai dimuat
+    window.onload = function () {
+      loadQuote();
+      loadGithubProfile();
+    };
+  </script>
+</body>
+</html>
